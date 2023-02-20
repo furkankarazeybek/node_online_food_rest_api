@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "f274272d-d003-49b8-87c2-386a43cadf1c",
+		"name": "Online_food",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17609561"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Admin - Add Vendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Second restaurant\",\r\n    \"foodType\": [\"non veg\",\"veg\"],\r\n    \"pincode\":\"400050\",\r\n    \"address\":\"bandra\",\r\n    \"phone\":\"553122365\",\r\n    \"ownerName\":\"Mr ABC\",\r\n    \"email\":\"furkan2@gmail.com\",\r\n    \"password\":\"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin/vendor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin",
+								"vendor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin - Get Vendors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Second restaurant\",\r\n    \"foodType\": [\"non veg\",\"veg\"],\r\n    \"pincode\":\"400050\",\r\n    \"address\":\"bandra\",\r\n    \"phone\":\"553122365\",\r\n    \"ownerName\":\"Mr ABC\",\r\n    \"email\":\"frkn1@gmail.com\",\r\n    \"password\":\"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin/vendors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin",
+								"vendors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin - Vendor Profile By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin/vendor/63eb71bde5af9583df293746",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin",
+								"vendor",
+								"63eb71bde5af9583df293746"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendor",
+			"item": [
+				{
+					"name": "Vendor - Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VkMzg1ZGFmNmM3ZjgzMTA3ZmYxMDMiLCJlbWFpbCI6InllbmkxMjNAZ21haWwuY29tIiwiZm9vZFR5cGVzIjpbIm5vbiB2ZWciLCJ2ZWciXSwibmFtZSI6IlNlY29uZCByZXN0YXVyYW50IiwiaWF0IjoxNjc2NTAwMDM4LCJleHAiOjE2NzY1ODY0Mzh9.0e6BYXWLVe-p48WArfjX3xmnWdyVOO5cfZB5SB-fzEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yeni123@gmail.com\",\r\n    \"password\":\"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/vendor/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vendor",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor - Profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor - Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VkMzg1ZGFmNmM3ZjgzMTA3ZmYxMDMiLCJlbWFpbCI6InllbmkxMjNAZ21haWwuY29tIiwiZm9vZFR5cGVzIjpbIm5vbiB2ZWciLCJ2ZWciXSwibmFtZSI6IlNlY29uZCByZXN0YXVyYW50IiwiaWF0IjoxNjc2NTAxNDI2LCJleHAiOjE2NzY1ODc4MjZ9.7uDQr3TF2r0mOV-4174uKoElNEapNUEzDcSWGMzilss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"foodType\": [\"non veg\",\"veg\"],\r\n\"name\":\"supercool restaurant\",\r\n\"address\":\"Istanbul, Turkey\",\r\n\"phone\":\"555555555\"\r\n\r\n}        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/vendor/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vendor",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor - Update Service - Available Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VkMzg1ZGFmNmM3ZjgzMTA3ZmYxMDMiLCJlbWFpbCI6InllbmkxMjNAZ21haWwuY29tIiwiZm9vZFR5cGVzIjpbIm5vbiB2ZWciLCJ2ZWciXSwibmFtZSI6IlNlY29uZCByZXN0YXVyYW50IiwiaWF0IjoxNjc2NTAxNDI2LCJleHAiOjE2NzY1ODc4MjZ9.7uDQr3TF2r0mOV-4174uKoElNEapNUEzDcSWGMzilss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"foodType\": [\"non veg\",\"veg\"],\r\n\"name\":\"supercool restaurant\",\r\n\"address\":\"Istanbul, Turkey\",\r\n\"phone\":\"555555555\"\r\n\r\n}        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/vendor/service",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vendor",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor - Add Food",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VlMTgwOTEzMDczNGFlMmE0NzZjYTkiLCJlbWFpbCI6InllbmkxMjNAZ21haWwuY29tIiwiZm9vZFR5cGVzIjpbIm5vbiB2ZWciLCJ2ZWciXSwibmFtZSI6IlNlY29uZCByZXN0YXVyYW50IiwiaWF0IjoxNjc2NTQ4MTM3LCJleHAiOjE2NzY2MzQ1Mzd9.6nLPy_2VGVLsaVecs1aUgbjai7hZqWmQ0e0s3lDMW1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Burger Big\",\r\n    \"description\": \"Burger big\",\r\n    \"category\": \"breakfast\",\r\n    \"foodType\": \"veg\",\r\n    \"readyTime\": 15,\r\n    \"price\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/vendor/food",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vendor",
+								"food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor - Update Cover Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VlMTgwOTEzMDczNGFlMmE0NzZjYTkiLCJlbWFpbCI6InllbmkxMjNAZ21haWwuY29tIiwiZm9vZFR5cGVzIjpbIm5vbiB2ZWciLCJ2ZWciXSwibmFtZSI6IlNlY29uZCByZXN0YXVyYW50IiwiaWF0IjoxNjc2NTU5NDQwLCJleHAiOjE2NzY2NDU4NDB9.gN6RBnPMPzCR_u_VyfTLzx6lR3Yjz6bGmPDtcZohg0Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Furkan/Downloads/arslan_white-removebg-preview (1).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/vendor/coverimage",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vendor",
+								"coverimage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor - Get Foods",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shopping",
+			"item": [
+				{
+					"name": "Food - Availability by pincode",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Food - Top Restaurant",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Food - Foods in 30 min",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Food - Search",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Food - Restaurant(vendor) By ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "User - SignUp",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "User - OTP_Verify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VmZjRhZGM0ZjA1NzllOTBhNzUzMzEiLCJlbWFpbCI6ImZ1cmthbl9jdXN0b21lckBnbWFpbC5jb20iLCJ2ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTY3NjY3MDEyNiwiZXhwIjoxNjc2NzU2NTI2fQ.BXRgzGKJ_6mjXvcQmCPuVDTp4aDwTLY3-uhOK5jbmqY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"436874\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/customer/verify/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"customer",
+								"verify",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"email\":\"furkan_customer@gmail.com\",\r\n      \"password\":\"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/customer/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Request_OTP",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "User - Profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "User - Edit Profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

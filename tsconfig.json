@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    
+    "target": "ES6",                                  
+    "module": "CommonJS",     
+    "lib": ["DOM","ES6","ESNext.AsyncIterable"],
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "esModuleInterop": true,   
+    "emitDecoratorMetadata": true,
+                          
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,                                      
+     "noImplicitAny": false,                            
+    "strictPropertyInitialization": false,            
+    "skipLibCheck": true,
+    "experimentalDecorators": true,                                    
+  }
+}
